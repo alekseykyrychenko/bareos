@@ -1,6 +1,6 @@
 echo "Generating mysql config file..."
 if [[ ! -f /etc/bareos/bconsole.conf ]];
- do
+ then
   mv /etc/kubeconfig/* /etc/bareos/
   cat mysql_client.cnf > /etc/my.cnf.d/client.cnf
   cat mysql_MyCatalog.conf > /etc/bareos/bareos-dir.d/catalog/MyCatalog.conf
@@ -11,6 +11,7 @@ if [[ ! -f /etc/bareos/bconsole.conf ]];
      sed -i "s/{USER}/${USER}/" ${FILE}
      sed -i "s/{PASSWORD}/${PASSWORD}/" ${FILE} 
    done
+  /usr/lib/bareos/scripts/make_bareos_tables
  fi
 chown bareos.bareos /var/lib/bareos/storage
 chmod 775 /var/lib/bareos/storage 
