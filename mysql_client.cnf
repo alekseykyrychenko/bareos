@@ -1,0 +1,4 @@
+[client]
+host={DATABASE}
+user={USER}
+password={PASSWORD}
