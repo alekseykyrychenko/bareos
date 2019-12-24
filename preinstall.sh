@@ -8,3 +8,5 @@ do
  sed -i "s/{USER}/${USER}/" ${FILE}
  sed -i "s/{PASSWORD}/${PASSWORD}/" ${FILE} 
 done
+chown bareos.bareos /var/lib/bareos/storage
+chmod 775 /var/lib/bareos/storage
