@@ -1,3 +1,7 @@
 echo "Starting Servis..."
-/bin/bash
+while :
+do
+   sleep 1
+   echo -n '-'
+done
 echo "Exit"
