@@ -20,6 +20,7 @@ if [[ ! -f /etc/bareos/bconsole.conf ]];
   done
   echo 'OK' 
   rm -f /etc/bareos/bareos-dir.d/console/admin.conf
+  rm -f /etc/bareos/bareos-dir.d/client/*
  fi
 chown bareos.bareos /var/lib/bareos/storage
 chmod 775 /var/lib/bareos/storage 
