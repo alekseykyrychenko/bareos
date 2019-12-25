@@ -20,9 +20,6 @@ if [[ ! -f /etc/bareos/bconsole.conf ]];
   done
   echo 'OK' 
   rm -f /etc/bareos/bareos-dir.d/console/admin.conf
-  bconsole << EOF
-     configure add console name=${ADMIN_USER} password=${ADMIN_PASS} profile=webui-admin tlsenable=false
-EOF
  fi
 chown bareos.bareos /var/lib/bareos/storage
 chmod 775 /var/lib/bareos/storage 
