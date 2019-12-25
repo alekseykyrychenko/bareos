@@ -1,8 +1,7 @@
 echo "Starting Servis..."
 cd /var/lib/bareos
 
-/usr/sbin/bareos-dir -t -f && /usr/sbin/bareos-dir && echo 'bareos-dir started' &&\
-/usr/sbin/httpd
+/usr/sbin/bareos-dir -t -f && /usr/sbin/bareos-dir && echo 'bareos-dir started'
 sleep 2
 echo 'Create user: '${ADMIN_USER}
 bconsole << EOF
