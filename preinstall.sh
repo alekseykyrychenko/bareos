@@ -20,4 +20,5 @@ if [[ ! -f /etc/bareos/bconsole.conf ]];
   done
   echo 'OK' 
   rm -f /etc/bareos/bareos-dir.d/console/admin.conf
+  sed -i 's/.*Address =.*/  Address = sd-bareos/' /etc/bareos/bareos-dir.d/storage/File.conf
  fi
