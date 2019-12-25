@@ -15,6 +15,7 @@ if [[ ! -f /etc/bareos/bconsole.conf ]];
   do
      echo 'Conect to database'
      /usr/lib/bareos/scripts/make_bareos_tables && break
+     sleep 2
      echo 'Error. Reconect...'
   done
   echo 'OK' 
