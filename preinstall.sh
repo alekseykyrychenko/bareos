@@ -11,10 +11,14 @@ if [[ ! -f /etc/bareos/bconsole.conf ]];
      sed -i "s/{USER}/${USER}/" ${FILE}
      sed -i "s/{PASSWORD}/${PASSWORD}/" ${FILE} 
    done
-  while /usr/lib/bareos/scripts/make_bareos_tables
+  while :
   do
      echo 'Conect to database'
+     /usr/lib/bareos/scripts/make_bareos_tables && break
+     echo 'Error. Reconect...'
   done
+  echo 'OK'
+  
   cat /tmp/bareos/bareos_admin.conf|sed "s/{ADMIN_USER}/${ADMIN_USER}/"|sed "s/{ADMIN_PASS}/${ADMIN_PASS}/" > /etc/bareos/bareos-dir.d/console/admin.conf
  fi
 chown bareos.bareos /var/lib/bareos/storage
