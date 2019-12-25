@@ -17,9 +17,11 @@ if [[ ! -f /etc/bareos/bconsole.conf ]];
      /usr/lib/bareos/scripts/make_bareos_tables && break
      echo 'Error. Reconect...'
   done
-  echo 'OK'
-  
-  cat /tmp/bareos/bareos_admin.conf|sed "s/{ADMIN_USER}/${ADMIN_USER}/"|sed "s/{ADMIN_PASS}/${ADMIN_PASS}/" > /etc/bareos/bareos-dir.d/console/admin.conf
+  echo 'OK' 
+  rm -f /etc/bareos/bareos-dir.d/console/admin.conf
+  bconsole << EOF
+     configure add console name=${ADMIN_USER} password=${ADMIN_PASS} profile=webui-admin tlsenable=false
+EOF
  fi
 chown bareos.bareos /var/lib/bareos/storage
 chmod 775 /var/lib/bareos/storage 
