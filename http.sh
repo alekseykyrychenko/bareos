@@ -1,8 +1,8 @@
 echo "Starting Servis..."
 
-echo 'ServerLimit 1
+echo 'ServerLimit 3
 StartServers 1
-MinSpareServers 1' >> /etc/httpd/conf.modules.d/00-mpm.conf
+MinSpareServers 2' >> /etc/httpd/conf.modules.d/00-mpm.conf
 
 sed -i 's/.*diraddress = .*/diraddress = "'${HOST}'"/' /etc/bareos-webui/directors.ini
 
