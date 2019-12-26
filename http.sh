@@ -7,6 +7,8 @@ sed -i 's/.*diraddress = .*/diraddress = "'${HOST}'"/' /etc/bareos-webui/directo
 
 /usr/sbin/httpd && echo OK
 
+rm -rf /tmp/bareos
+
 while :
 do
    sleep 1
