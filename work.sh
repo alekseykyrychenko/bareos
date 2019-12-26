@@ -9,6 +9,8 @@ configure add console name=${ADMIN_USER} password=${ADMIN_PASS} profile=webui-ad
 reload
 EOF
 
+rm -rf /tmp/bareos
+
 while :
 do
    sleep 1
