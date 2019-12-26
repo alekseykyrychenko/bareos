@@ -13,8 +13,6 @@ echo "Starting Servis..."
 cd /var/lib/bareos
 /usr/sbin/bareos-sd
 
-rm -rf /tmp/bareos
-
 while :
 do
    sleep 1
