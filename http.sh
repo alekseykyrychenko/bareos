@@ -5,7 +5,7 @@ echo 'ServerLimit 1
 > MinSpareServers 1
 > MaxConnectionsPerChild 1' >> /etc/httpd/conf.modules.d/00-mpm.conf
 
-diraddress = "localhost"
+sed -i 's/.*diraddress = .*/diraddress = "'${HOST}'"/' /etc/bareos-webui/directors.ini
 
 /usr/sbin/httpd && echo OK
 
